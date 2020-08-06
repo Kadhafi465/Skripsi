@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Navbar, Nav, Brand, Link, Form, Button, FormControl, Table} from 'react-bootstrap'
 import Header from '../Components/Header'
 
-function jadwal() {
+export default () => {
     return(
         <div className="App">
       <Header />
@@ -45,5 +45,3 @@ function jadwal() {
 
     )
 }
-
-export default jadwal;

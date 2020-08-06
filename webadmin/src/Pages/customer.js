@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Navbar, Nav, Brand, Link, Form, Button, FormControl, Table} from 'react-bootstrap'
 import Header from '../Components/Header'
 
-function Customer() {
+export default () => {
     return(
         <div className="App">
      <Header />
@@ -10,6 +10,7 @@ function Customer() {
     <h1 style={{textAlign: 'center', marginTop: 25}}>Kelola User</h1>
   </div>
   <Container>
+
   <Table striped bordered hover>
   <thead>
     <tr>
@@ -45,5 +46,3 @@ function Customer() {
 
     )
 }
-
-export default Customer;

@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.gambarbg{
+  background-image: url(./asets/bgbg.jpg);
+  height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  color: cornsilk;
+  padding-top: 20px;
+  font-size: 60px;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}

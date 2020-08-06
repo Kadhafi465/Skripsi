@@ -1,7 +1,7 @@
 import React from 'react'
 import {Nav, Navbar, Form, Button, FormControl} from 'react-bootstrap'
 
-function Home() {
+export default () => {
     return(
         <div className="App">
       <div style={{height: 70, marginTop: 20,textAlign: 'center'}}>
@@ -36,5 +36,3 @@ function Home() {
 
     )
 }
-
-export default Home;
