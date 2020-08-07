@@ -39,7 +39,9 @@ export default () => {
                 <td>22-08-2020</td>
                 <td>08:00-09:00</td>
                 <td>img ...</td>
-                <td></td>
+                <td>
+                  <Button variant="info">Terima</Button> <Button variant="danger">Tolak</Button>
+                </td>
               </tr>
               <tr>
                 <td>2</td>
@@ -48,7 +50,9 @@ export default () => {
                 <td>22-08-2020</td>
                 <td>10:00-11:00</td>
                 <td>img ...</td>
-                <td></td>
+                <td>
+                  <Button variant="info">Terima</Button> <Button variant="danger">Tolak</Button>
+                </td>
               </tr>
             </tbody>
           </Table>
