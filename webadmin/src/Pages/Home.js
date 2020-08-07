@@ -2,6 +2,9 @@ import React from "react";
 import { Nav, Navbar, Form, Button, FormControl, Image, Table, Container } from "react-bootstrap";
 import Navigation from "../Components/Navigation";
 import lapangan from "../asets/lapangan.png";
+import restarea from '../asets/restarea.jpg'
+import gedung from '../asets/gedung.jpeg'
+import roomoffice from '../asets/roomoffice.jpg'
 
 export default () => {
   return (
@@ -77,11 +80,24 @@ export default () => {
             sehingga para konsumen atau pelanggan dapat lebih menikmati fasilitas futsal lebih baik.{" "}
           </p>
         </div>
-        <div style={{ textAlign: "center", marginBottom: 20, marginTop: 40 }}>
-          <h3>Galeri</h3>
-          <Image style={{ height: 200 }} src={lapangan} />
-          <Image style={{ height: 200, marginLeft: 10 }} src={lapangan} />
-          <Image style={{ height: 200, marginLeft: 10 }} src={lapangan} />
+          <h3 style={{textAlign: 'center'}}>Galeri</h3>
+        <div style={{ display: 'flex',justifyContent: 'center', marginBottom: 20, marginTop: 40 }}>
+          <div  style={{textAlign: 'center'}}> 
+          <Image style={{ height: 140, width: 210 }} src={gedung} />
+          <p>Gedung</p>
+            </div>
+          <div  style={{textAlign: 'center'}}>
+          <Image style={{ height: 140, marginLeft: 10, width: 210 }} src={lapangan} />
+            <p>Lapangan</p>
+            </div>
+          <div  style={{textAlign: 'center'}}>
+          <Image style={{ height: 140, marginLeft: 10, width: 210 }} src={roomoffice}/>
+            <p>Office</p>
+            </div>
+          <div  style={{textAlign: 'center'}}>
+          <Image style={{ height: 140, marginLeft: 10, width: 210 }} src={restarea}/>
+            <p>Tempat Istirahat</p>
+            </div>
         </div>
       </Container>
     </>
