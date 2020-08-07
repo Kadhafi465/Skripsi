@@ -17,11 +17,23 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <>
-      <Home />
-      {/* <Customer /> */}
-      {/* <Jadwal /> */}
-      {/* <Pembayaran /> */}
-      {/* <Laporan /> */}
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/customer">
+          <Customer />
+        </Route>
+        <Route path="/jadwal">
+          <Jadwal />
+        </Route>
+        <Route path="/pembayaran">
+          <Pembayaran />
+        </Route>
+        <Route path="/laporan">
+          <Laporan />
+        </Route>
+      </Switch>
       {/* <Login /> */}
     </>
   );
