@@ -17,8 +17,8 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <>
-      <Home />
-      {/* <Customer /> */}
+      {/* <Home /> */}
+      <Customer />
       {/* <Jadwal /> */}
       {/* <Pembayaran /> */}
       {/* <Laporan /> */}
