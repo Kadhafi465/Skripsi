@@ -1,9 +1,14 @@
 import React from "react";
 import { Nav, Navbar, Button, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../asets/logobaba.png";
 
 export default () => {
+  const history = useHistory();
+  function logoutsubmit() {
+    localStorage.clear();
+    history.push("/login");
+  }
   return (
     <>
       <div style={{ justifyContent: "center", display: "flex", marginTop: 10, marginBottom: 10 }}>
@@ -37,7 +42,9 @@ export default () => {
             </Link>
           </Nav.Link>
         </Nav>
-        <Button variant="primary">Logout</Button>
+        <Button variant="primary" onClick={logoutsubmit}>
+          Logout
+        </Button>
       </Navbar>
     </>
   );

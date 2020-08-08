@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Navbar,
-  Nav,
-  Brand,
-  Link,
-  Form,
-  Button,
-  FormControl,
-  Table,
-} from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 import Navigation from "../Components/Navigation";
 
 export default () => {
