@@ -1,14 +1,68 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Rent = sequelize.define('Rent', {
-    tanggal: DataTypes.STRING,
-    jam: DataTypes.STRING,
-    status_sewa: DataTypes.BOOLEAN,
-    status_booking: DataTypes.BOOLEAN,
-    customerId: DataTypes.INTEGER
-  }, {});
-  Rent.associate = function(models) {
-    // associations can be defined here
+  const Sequelize = sequelize.Sequelize;
+  const Model = Sequelize.Model;
+
+  class Rent extends Model {}
+
+  Rent.init(
+    {
+      tanggal: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Tanggal Cannot be empty",
+          },
+        },
+      },
+      jam: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Jam Cannot be empty",
+          },
+        },
+      },
+      tarif: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Tarif Cannot be empty",
+          },
+        },
+      },
+      status_sewa: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Status Cannot be empty",
+          },
+        },
+      },
+      status_booking: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Status Cannot be empty",
+          },
+        },
+      },
+      customerId: DataTypes.INTEGER,
+    },
+    { sequelize }
+  );
+  Rent.associate = function (models) {
+    Rent.belongsTo(models.Customer, { foreignKey: "customerId" });
   };
   return Rent;
 };

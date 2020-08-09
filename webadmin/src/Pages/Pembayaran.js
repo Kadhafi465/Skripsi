@@ -25,7 +25,7 @@ export default () => {
               <tr>
                 <td>1</td>
                 <td>001</td>
-                <td>Dhafi</td>
+                <td>Riski</td>
                 <td>22-08-2020</td>
                 <td>08:00-09:00</td>
                 <td>img ...</td>

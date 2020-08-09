@@ -9,7 +9,7 @@ import Bottomnav from "../Components/Bottomnav";
 export default function Home() {
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView style={{ flex: 1, backgroundColor: "darkwhite" }}>
+      <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
         <Header />
         <Bookingnow />
         <Fasilitas />

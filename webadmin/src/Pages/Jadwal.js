@@ -30,10 +30,10 @@ export default () => {
                 </td>
               </tr>
               <tr>
-                <td>1</td>
+                <td>2</td>
                 <td>22-08-2020</td>
                 <td>08:00-09:00</td>
-                <td>Jak</td>
+                <td>kaka</td>
                 <td>
                   <Button variant="primary">Selesai</Button>
                 </td>

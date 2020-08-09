@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getData } from "../store/actions/dataAction";
 import { Container, Button, Table } from "react-bootstrap";
 
 import Navigation from "../Components/Navigation";
 
 export default () => {
+  const dispatch = useDispatch();
+
+  const files = useSelector((state) => state.dataReducer.files);
+
+  useEffect(() => {
+    dispatch(getData());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Navigation />
@@ -16,6 +26,7 @@ export default () => {
             <tr>
               <th>No</th>
               <th>Nama</th>
+              <th>Nama</th>
               <th>Alamat</th>
               <th>No. HP</th>
               <th>Tanggal Lahir</th>
@@ -23,36 +34,21 @@ export default () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>
-                <Button variant="primary">Hapus</Button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>
-                <Button variant="primary">Hapus</Button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>
-                <Button variant="primary">Hapus</Button>
-              </td>
-            </tr>
+            {files.map((file, idx) => {
+              return (
+                <tr>
+                  <td>{file.id}</td>
+                  <td>{file.nama}</td>
+                  <td>{file.email}</td>
+                  <td>{file.alamat}</td>
+                  <td>{file.telepon}</td>
+                  <td>{file.ttl}</td>
+                  <td>
+                    <Button variant="primary">Hapus</Button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </Container>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, FormControl } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLogin } from '../store/actions/userAction';
+import { setLogin } from "../store/actions/userAction";
 import "../App.css";
 
 export default () => {
@@ -24,7 +24,10 @@ export default () => {
       password,
     };
     dispatch(setLogin(data));
-    history.push("/");
+    let isToken = localStorage.getItem("token");
+    if (isToken) {
+      history.push("/");
+    }
   }
   return (
     <div className="gambarbg">
@@ -42,7 +45,7 @@ export default () => {
             <FormControl
               className="logininput"
               onChange={onChangePassword}
-              type="text"
+              type="password"
               placeholder="password"
             />
             <Button variant="primary" size="sm" type="submit" block className="loginbtn">

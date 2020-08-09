@@ -18,15 +18,17 @@ export default function Help() {
           <Text style={{ fontSize: 17, fontStyle: "normal", marginHorizontal: 20 }}>Help</Text>
         </View>
         <View style={{ marginTop: 20, marginHorizontal: 15 }}>
-          <Text>Cara Order Lapangan</Text>
+          <Text style={{ fontWeight: "bold" }}>Cara Order Lapangan</Text>
           <Text>1. Klik Menu Booking </Text>
           <Text>2. Pilih Jadwal Kosong</Text>
           <Text>3. Klik Booking</Text>
           <Text>4. Upload Bukti Bayar</Text>
           <Text>5. Setelah Upload Bukti Bayar, Bukti Sewa Akan dikirim ke menu order</Text>
-          <Text>Ketentuan</Text>
+          <Text style={{ paddingTop: 10, fontWeight: "bold" }}>Ketentuan</Text>
           <Text>1. Dp Minamal Rp. 50.000</Text>
           <Text>2. Datang Tepat Waktu sesuai Jam Sewa</Text>
+          <Text style={{ paddingTop: 10, fontWeight: "bold" }}>Kontak</Text>
+          <Text>0896-0000-9899</Text>
         </View>
       </ScrollView>
       <Bottomnav />

@@ -3,7 +3,15 @@ import { View, Text, Image } from "react-native";
 
 export default function Header() {
   return (
-    <View style={{ backgroundColor: "white", height: 170, marginTop: 30 }}>
+    <View
+      style={{
+        backgroundColor: "white",
+        height: 170,
+        marginTop: 30,
+        alignItems: "center",
+        marginBottom: 10,
+      }}
+    >
       <Image style={{ width: 350, height: 170 }} source={require("../assets/baba.jpg")} />
     </View>
   );

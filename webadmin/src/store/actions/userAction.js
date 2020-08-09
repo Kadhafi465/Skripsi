@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const host = `http://localhost:3001`;
+const host = `https://tranquil-stream-24296.herokuapp.com`;
+// const host = `http://localhost:3001`;
 
 export const setLogin = (data) => {
   return (dispatch) => {

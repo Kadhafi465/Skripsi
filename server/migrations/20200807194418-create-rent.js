@@ -11,7 +11,7 @@ module.exports = {
       tanggal: {
         type: Sequelize.STRING
       },
-      sesi: {
+      jam: {
         type: Sequelize.STRING
       },
       tarif: {
