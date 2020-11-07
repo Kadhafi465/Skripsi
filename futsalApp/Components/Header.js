@@ -5,14 +5,13 @@ export default function Header() {
   return (
     <View
       style={{
-        backgroundColor: "white",
         height: 170,
         marginTop: 30,
         alignItems: "center",
-        marginBottom: 10,
+        marginBottom: 5,
       }}
     >
-      <Image style={{ width: 350, height: 170 }} source={require("../assets/baba.jpg")} />
+      <Image style={{ width: 350, height: 170 }} source={require("../assets/babalogo.png")} />
     </View>
   );
 }

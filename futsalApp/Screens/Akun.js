@@ -1,55 +1,64 @@
 import React from "react";
-import { View, ScrollView, Text, TouchableOpacity } from "react-native";
+import { View, ScrollView, Text, TouchableOpacity, ImageBackground, Image } from "react-native";
 import Bottomnav from "../Components/Bottomnav";
+import papan from '../assets/papantulis.jpg'
 
 export default function Akun() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, marginTop: 15 }}>
+      <ImageBackground source={papan} style={{flex:1}}>
+
       <ScrollView>
-        <View
+      <View
           style={{
-            height: 50,
-            backgroundColor: "lightblue",
+            width: 375,
+            height: 60,
+            opacity: 0.8,
+            backgroundColor: "white",
             marginTop: 30,
             justifyContent: "center",
           }}
         >
-          <Text
-            style={{ fontSize: 17, fontStyle: "normal", justifyContent: "center", marginLeft: 20 }}
-          >
-            Akun
-          </Text>
+          <View style={{flexDirection: 'row', justifyContent:'space-between', marginHorizontal: 20}}>
+          <Text style={{fontSize: 19, fontStyle: "normal" }}>Akun</Text>
+          <Image style={{height: 30, width: 60}} source={require('../assets/babalogo.png')}/>
+          </View>
         </View>
         <View
           style={{
             height: 150,
-            backgroundColor: "lightblue",
+            opacity: 0.6,
+            backgroundColor: "grey",
             marginTop: 50,
             borderRadius: 10,
             marginHorizontal: 15,
           }}
         >
-          <Text style={{ marginTop: 10, marginLeft: 10 }}>Nama : </Text>
-          <Text style={{ marginLeft: 10, marginTop: 10 }}>No.Telpon :</Text>
+          <Text style={{ marginTop: 10, marginLeft: 10, color: 'white', fontWeight: 'bold' }}>Nama : </Text>
+          <Text style={{ marginLeft: 10, marginTop: 10, color: 'white', fontWeight:'bold'}}>No.Telpon :</Text>
         </View>
         <View
           style={{
-            marginTop: 250,
-            width: 100,
-            height: 40,
-            backgroundColor: "red",
+            marginTop: 200,
+            width: 150,
+            height: 45,
+            opacity: 0.7,
+            backgroundColor: "grey",
+            borderColor: 'red',
+            borderWidth: 2,
             borderRadius: 10,
             alignItems: "center",
             justifyContent: "center",
-            marginHorizontal: 135,
+            marginHorizontal: 115,
           }}
         >
           <TouchableOpacity>
-            <Text>Logout</Text>
+            <Text style={{color:'yellow'}}>Logout</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
       <Bottomnav />
+      </ImageBackground>
     </View>
   );
 }

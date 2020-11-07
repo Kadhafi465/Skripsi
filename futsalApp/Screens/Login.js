@@ -4,7 +4,7 @@ import { StyleSheet, Image, View, TextInput, Text, Button, TouchableOpacity } fr
 export default function Login() {
   return (
     <View style={{ position: "relative" }}>
-      <Image style={{ position: "absolute" }} source={require("../assets/bgbg.jpg")} />
+      <Image style={{ position: "absolute" }} source={require("../assets/papantulis.jpg")} />
       <View style={styles.container}>
         <View style={{ alignItems: "center" }}>
           <Text style={styles.titletext}>Login</Text>
@@ -12,7 +12,7 @@ export default function Login() {
           <TextInput placeholder="password" style={styles.userinput} />
           <View style={{ marginTop: 20 }}>
             <TouchableOpacity style={styles.buttonBorder}>
-              <Text style={styles.buttonText}>login</Text>
+              <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
           </View>
           <View style={{ marginVertical: 20, textAlign: "center" }}>
@@ -26,29 +26,32 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   container: {
-    opacity: 0.8,
-    marginVertical: 200,
-    marginHorizontal: 40,
+    opacity: 0.5,
+    marginVertical: 160,
+    marginHorizontal: 30,
     borderRadius: 30,
     width: 300,
     height: 300,
-    backgroundColor: "white",
+    backgroundColor: "grey",
     alignItems: "center",
     justifyContent: "center",
+    borderColor: "yellow",
+    borderWidth: 5,
   },
   titletext: {
     marginTop: 30,
     alignItems: "center",
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: "normal",
+    color: 'white'
   },
   userinput: {
     fontWeight: "bold",
-    color: "blue",
+    color: "white",
     height: 40,
     width: 250,
-    borderColor: "gray",
-    borderWidth: 1,
+    borderColor: "purple",
+    borderWidth: 2,
     paddingLeft: 10,
     borderRadius: 10,
     marginTop: 20,

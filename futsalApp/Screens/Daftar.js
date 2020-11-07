@@ -4,7 +4,7 @@ import { Image, View, TextInput, Text, Button, StyleSheet, TouchableOpacity } fr
 export default function Daftar() {
   return (
     <View style={{ position: "relative" }}>
-      <Image style={{ position: "absolute" }} source={require("../assets/bgbg.jpg")} />
+      <Image style={{ position: "absolute" }} source={require("../assets/papantulis.jpg")} />
       <View style={styles.itemblock}>
         <Text style={styles.texttitle}>Register</Text>
         <TextInput placeholder="Nama Lengkap" style={styles.inputtext} />
@@ -38,25 +38,25 @@ const styles = StyleSheet.create({
     color: "white",
   },
   texttitle: {
-    fontWeight: "bold",
+    fontWeight: "normal",
     fontSize: 30,
     color: "white",
     marginVertical: 20,
   },
   inputtext: {
-    backgroundColor: "white",
+    backgroundColor:'grey',
     fontWeight: "bold",
-    color: "blue",
+    color: "white",
     height: 40,
-    width: 250,
-    borderColor: "gray",
+    width: 280,
+    borderColor: "yellow",
     borderWidth: 1,
     borderRadius: 10,
     paddingLeft: 10,
     marginVertical: 10,
   },
   buttonBorder: {
-    width: 250,
+    width: 280,
     height: 40,
     backgroundColor: "purple",
     borderRadius: 10,

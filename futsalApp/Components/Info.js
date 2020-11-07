@@ -3,18 +3,18 @@ import { View, Text, Image } from "react-native";
 
 export default function Info() {
   return (
-    <View style={{ marginTop: 15, marginHorizontal: 15 }}>
-      <Text style={{ fontSize: 16, fontWeight: "bold" }}>Info BABA</Text>
+    <View style={{ marginTop: 25, marginHorizontal: 15 }}>
+      <Text style={{ fontSize: 18, fontWeight: "bold", color: 'yellow' }}>Info BABA</Text>
       <View>
         <View style={{ alignItems: "center" }}>
-          <View style={{ width: 250, height: 170, borderRadius: 8 }}>
+          <View style={{ width: 250, height: 170, borderRadius: 10 }}>
             <Image
-              source={require("../assets/baba.jpg")}
-              style={{ width: undefined, height: 170, resizeMode: "cover" }}
+              source={require("../assets/babalogo.png")}
+              style={{ width: undefined, height: 170, resizeMode: "cover", borderRadius: 10, marginTop: 10 }}
             />
           </View>
-          <Text style={{ fontWeight: "bold", marginBottom: 5 }}>Tournamen</Text>
-          <Text style={{ marginBottom: 10 }}>
+          <Text style={{ fontWeight: "bold", marginBottom: 5, color: 'white', paddingTop: 15 }}>Tournamen</Text>
+          <Text style={{ marginBottom: 10, color: 'white' }}>
             Baba Futsal akan mengadakan turnamen tingkat kecamatan yang akab diadakan di bulan
             Januari, Ayo Daftarkan Segera Tim Mu
           </Text>

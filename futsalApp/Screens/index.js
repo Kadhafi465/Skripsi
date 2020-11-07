@@ -5,3 +5,4 @@ export { default as Help } from "./Help";
 export { default as Home } from "./Home";
 export { default as Order } from "./Order";
 export { default as Bayar } from "./Bayar";
+export { default as Sewa } from "./Sewa"

@@ -1,16 +1,31 @@
 import React from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, ScrollView, Text, Image,ImageBackground } from "react-native";
 import Bottomnav from "../Components/Bottomnav";
+import papan from '../assets/papantulis.jpg'
 
 export default function Order() {
     return(
-        <View style={{flex:1}}>
+        <View style={{flex:1 ,marginTop: 15}}>
+      <ImageBackground source={papan} style={{flex:1}}>
       <ScrollView>
-      <View style={{height: 50,backgroundColor: 'lightblue', marginTop: 30, justifyContent:'center'}}>
-          <Text style={{fontSize: 17, fontStyle:'normal', justifyContent: 'center', marginLeft: 20}}>Order</Text>
+      <View
+          style={{
+            width: 375,
+            height: 60,
+            opacity: 0.5,
+            backgroundColor: "white",
+            marginTop: 30,
+            justifyContent: "center",
+          }}
+        >
+          <View style={{flexDirection: 'row', justifyContent:'space-between', marginHorizontal: 20}}>
+          <Text style={{ fontSize: 19, fontStyle: "normal" }}>Order</Text>
+          <Image style={{height: 30, width: 60}} source={require('../assets/babalogo.png')}/>
+          </View>
         </View>
       </ScrollView>
       <Bottomnav />
+      </ImageBackground>
     </View>
     )
 }

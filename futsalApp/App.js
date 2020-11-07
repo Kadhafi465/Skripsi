@@ -15,7 +15,7 @@ import Bookingnow from "./Components/Bookingnow";
 import Info from "./Components/Info";
 import Fasilitas from "./Components/Fasilitas";
 import Bottomnav from "./Components/Bottomnav";
-import { Home, Order, Help, Akun, Login, Daftar, Bayar } from "./Screens";
+import { Home, Order, Help, Akun, Login, Daftar, Bayar, Sewa } from "./Screens";
 // import { createStackNavigator } from "react-navigation-stack";
 // import { NavigationContainer } from "react-navigation";
 
@@ -35,12 +35,13 @@ export default function App() {
     //     {/* <Stack.Screen name="Akun" component={Akun} options={{ headerShown: false }} /> */}
     //   </Stack.Navigator>
     // </NavigationContainer>
-     <Home />
+    //  <Home />
     // <Help />
     // <Order />
     // <Akun />
     // <Login />
     // <Daftar />
     // <Bayar />
+    <Sewa />
   );
 }
