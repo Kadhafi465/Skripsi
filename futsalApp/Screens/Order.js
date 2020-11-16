@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Image,ImageBackground } from "react-native";
 import Bottomnav from "../Components/Bottomnav";
 import papan from '../assets/papantulis.jpg'
 
-export default function Order() {
+export default function Order({navigation}) {
     return(
         <View style={{flex:1 ,marginTop: 15}}>
       <ImageBackground source={papan} style={{flex:1}}>
@@ -24,7 +24,7 @@ export default function Order() {
           </View>
         </View>
       </ScrollView>
-      <Bottomnav />
+      <Bottomnav navigation={navigation} />
       </ImageBackground>
     </View>
     )

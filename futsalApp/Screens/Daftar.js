@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, View, TextInput, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function Daftar() {
+export default function Daftar ( {navigation} ) {
   return (
     <View style={{ position: "relative" }}>
       <Image style={{ position: "absolute" }} source={require("../assets/papantulis.jpg")} />
@@ -17,9 +17,11 @@ export default function Daftar() {
           <TouchableOpacity style={styles.buttonBorder}>
             <Text style={styles.buttonText}>Register</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={{ fontSize: 15, color: "white", textAlign: "center", marginTop: 20 }}>
             Sudah punya Akun? LOGIN
           </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

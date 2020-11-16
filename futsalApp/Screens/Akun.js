@@ -3,7 +3,7 @@ import { View, ScrollView, Text, TouchableOpacity, ImageBackground, Image } from
 import Bottomnav from "../Components/Bottomnav";
 import papan from '../assets/papantulis.jpg'
 
-export default function Akun() {
+export default function Akun({navigation}) {
   return (
     <View style={{ flex: 1, marginTop: 15 }}>
       <ImageBackground source={papan} style={{flex:1}}>
@@ -52,12 +52,12 @@ export default function Akun() {
             marginHorizontal: 115,
           }}
         >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.popToTop()}>
             <Text style={{color:'yellow'}}>Logout</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <Bottomnav />
+      <Bottomnav navigation={navigation} />
       </ImageBackground>
     </View>
   );

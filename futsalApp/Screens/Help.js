@@ -3,7 +3,7 @@ import { View, ScrollView, Text, ImageBackground, Image } from "react-native";
 import Bottomnav from "../Components/Bottomnav";
 import papan from '../assets/papantulis.jpg'
 
-export default function Help() {
+export default function Help({navigation}) {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground source={papan} style={{flex:1 ,marginTop: 15}}>
@@ -37,7 +37,7 @@ export default function Help() {
           <Text style={{color:'white'}}>0896-0000-9899</Text>
         </View>
       </ScrollView>
-      <Bottomnav />
+      <Bottomnav navigation={navigation} />
       </ImageBackground>
     </View>
   );
