@@ -13,7 +13,7 @@ export default function Home({navigation}) {
       <ImageBackground source={papan} style={{ flex: 1 }}>
         <ScrollView>
           <Header />
-          <Bookingnow />
+          <Bookingnow navigation={navigation} />
           <Fasilitas />
           <Info />
         </ScrollView>

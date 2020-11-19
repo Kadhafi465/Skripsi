@@ -1,7 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 
-export default function Bookingnow() {
+export default function Bookingnow( {navigation}) {
+  const handleSewa = () => {
+    navigation.navigate('Sewa')
+  }
   return (
     <View>
       <View
@@ -28,7 +31,7 @@ export default function Bookingnow() {
         <Text style={{ textAlign: "center", color:'white' }}> Pukul 08:00 - 16:00 : Rp 150.000 /jam</Text>
         <Text style={{ textAlign: "center", color:'white' }}> Pukul 17:00 - 23:00 : Rp 200.000 /jam</Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> handleSewa()}>
         <View
           style={{
             height: 40,

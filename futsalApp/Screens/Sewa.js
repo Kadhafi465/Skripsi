@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
-import {View, ImageBackground, Text, Image, ScrollView, Button } from 'react-native';
+import React, { Component } from 'react';
+import {View, ImageBackground, Text, Image, ScrollView, Button, TouchableOpacity } from 'react-native';
 import papan from '../assets/papantulis.jpg';
-import DateTimePickerModal from "react-native-modal-datetime-picker";
-// import moment from 'react-native-modal-datetime-picker'
+import DatePicker from 'react-native-datepicker'
 
-  const Sewa = () => {
-    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  
-    const showDatePicker = () => {
-      setDatePickerVisibility(true);
-    };
-  
-    const hideDatePicker = () => {
-      setDatePickerVisibility(false);
-    };
-  
-    const handleConfirm = (date) => {
-      console.warn("A date has been picked: ", date);
-      // chosenDate: moment(datetime).format('MMMM, Do YYYY HH:mm')
-      hideDatePicker();
-    };
+export default class Sewa extends Component {
+  constructor(props){
+    super(props)
+    this.state = {date:"2020-11-01"}
+  }
 
+render(){
+  const { navigation } = this.props;
     return (
         <View style={{flex:1 ,marginTop: 15}}>
       <ImageBackground source={papan} style={{flex:1}}>
@@ -29,34 +19,91 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
           style={{
             width: 375,
             height: 60,
-            opacity: 0.5,
+            opacity: 0.7,
             backgroundColor: "white",
             marginTop: 30,
             justifyContent: "center",
-          }}
-        >
-          <View style={{flexDirection: 'row', justifyContent:'space-between', marginHorizontal: 20}}>
-          <Text style={{ fontSize: 19, fontStyle: "normal" }}>Pilih Jadwal</Text>
+          }}>
+
+          <View 
+          style={{
+            flexDirection: 'row',
+            justifyContent:'space-between',
+            marginHorizontal: 20}}>
+          <Text 
+          style={{
+            fontSize: 19,
+            fontStyle: "normal"
+            }}>Pilih Jadwal
+            </Text>
+
           <Image style={{height: 30, width: 60}} source={require('../assets/babalogo.png')}/>
           </View>
         </View>
-      <View>
-      <Text style={{color: 'red', fontSize: 20}}>
-        {/* {setDatePickerVisibility.chosenDate} */}
-      </Text>
-      <Button title="Pilih Tanggal dan Jam" onPress={showDatePicker} />
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible}
+
+<View style={{marginVertical: 20, marginLeft: 30}}>
+  <Text style={{fontSize: 16, color: 'yellow'}}>Pilih Tanggal :</Text>
+</View>
+<View style={{
+  marginHorizontal: 25,
+  justifyContent: 'center',
+  alignContent: 'center',
+  alignItems: 'center',
+  backgroundColor: 'white',
+  opacity: 0.2,
+  width: 310,
+  height: 100,
+  opacity: 0.6,
+  borderRadius: 10
+}}>
+        <DatePicker
+        style={{width: 200}}
+        date={this.state.date}
         mode="date"
-        onConfirm={handleConfirm}
-        onCancel={hideDatePicker}
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="2020-11-01"
+        maxDate="2020-12-31"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
       />
-      </View>
+</View>
+      <TouchableOpacity onPress={()=> navigation.navigate('Jam')}>
+        <View
+          style={{
+            height: 40,
+            backgroundColor: "purple",
+            opacity: 0.7,
+            marginHorizontal:30,
+            marginTop: 15,
+            borderColor: 'yellow',
+            borderRadius: 18,
+            borderWidth: 2,
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: 30
+          }}
+        >
+          <Text style={{color: 'yellow'}}>Next</Text>
+        </View>
+      </TouchableOpacity>
       </ScrollView>
       </ImageBackground>
       
     </View>
     );
   }
-
-export default Sewa;
+}

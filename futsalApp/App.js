@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Order, Help, Akun, Login, Daftar, Bayar, Sewa } from "./Screens";
+import { Home, Order, Help, Akun, Login, Daftar, Bayar, Sewa, Jam } from "./Screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -16,6 +16,7 @@ export default function App() {
         <Stack.Screen name="Sewa" component={Sewa} options={{ headerShown: false }} />
         <Stack.Screen name="Order" component={Order} options={{ headerShown: false }} />
         <Stack.Screen name="Akun" component={Akun} options={{ headerShown: false }} />
+        <Stack.Screen name="Jam" component={Jam} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
     //  <Home />

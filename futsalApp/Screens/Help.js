@@ -12,7 +12,7 @@ export default function Help({navigation}) {
           style={{
             width: 375,
             height: 60,
-            opacity: 0.5,
+            opacity: 0.7,
             backgroundColor: "white",
             marginTop: 30,
             justifyContent: "center",

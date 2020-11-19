@@ -13,7 +13,7 @@ export default function Akun({navigation}) {
           style={{
             width: 375,
             height: 60,
-            opacity: 0.8,
+            opacity: 0.7,
             backgroundColor: "white",
             marginTop: 30,
             justifyContent: "center",
