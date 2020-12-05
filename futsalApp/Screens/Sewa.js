@@ -81,7 +81,7 @@ render(){
         onDateChange={(date) => {this.setState({date: date})}}
       />
 </View>
-      <TouchableOpacity onPress={()=> navigation.navigate('Jam')}>
+      <TouchableOpacity onPress={()=> console.warn(this.state.date)}>
         <View
           style={{
             height: 40,
