@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.init(
     {
-      username: {
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -28,6 +28,56 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: {
             args: true,
             msg: "Password cannot be empty",
+          },
+        },
+      },
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Role Cannot be empty",
+          },
+        },
+      },
+      nama: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Nama Cannot be empty",
+          },
+        },
+      },
+      alamat: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Alamat Cannot be empty",
+          },
+        },
+      },
+      telepon: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Telepon Cannot be empty",
+          },
+        },
+      },
+      ttl: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Tanggal Cannot be empty",
           },
         },
       },

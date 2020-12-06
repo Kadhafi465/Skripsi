@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken')
-const { Customer } = require('../models')
+const { User } = require('../models')
 
 const authentication = function (req, res, next) {
     try {
         const { token } = req.headers
         const decoded = jwt.verify(token, process.env.SECRET)
         req.user = decoded
-        Customer.findOne({ where: { email: req.user.email } })
+        User.findOne({ where: { email: req.user.email } })
             .then(user => {
                 if (user) {
                     next()

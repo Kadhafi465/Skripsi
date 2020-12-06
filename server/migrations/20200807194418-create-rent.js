@@ -1,42 +1,39 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Rents', {
+    return queryInterface.createTable("Rents", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       tanggal: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       jam: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       tarif: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       status_sewa: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
-      status_booking: {
-        type: Sequelize.BOOLEAN
-      },
-      customerId: {
-        type: Sequelize.INTEGER
+      userId: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Rents');
-  }
+    return queryInterface.dropTable("Rents");
+  },
 };

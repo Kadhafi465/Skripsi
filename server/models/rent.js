@@ -47,22 +47,12 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      status_booking: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            args: true,
-            msg: "Status Cannot be empty",
-          },
-        },
-      },
       customerId: DataTypes.INTEGER,
     },
     { sequelize }
   );
   Rent.associate = function (models) {
-    Rent.belongsTo(models.Customer, { foreignKey: "customerId" });
+    Rent.belongsTo(models.User, { foreignKey: "userId" });
   };
   return Rent;
 };
