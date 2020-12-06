@@ -1,38 +1,66 @@
-import React from "react";
-import {
-  StyleSheet,
-  Image,
-  View,
-  TextInput,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Image, View, TextInput, Text, TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
 
-export default function Login( {navigation} ) {
+export default function Login({ navigation }) {
+  const [value, setValue] = useState({
+    email: "",
+    password: "",
+  });
+
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem("@storage_Key", value);
+    } catch (e) {
+      // saving error
+    }
+  };
+
   const handleDaftar = () => {
-navigation.navigate('Daftar')
-  }
+    navigation.navigate("Daftar");
+  };
 
   const handleHome = () => {
-    navigation.navigate('Home')
-  }
-  return ( 
+    // console.warn(value.email, value.password);
+    axios({
+      method: "post",
+      // url: "http://localhost:3001/login",
+      url: "http://127.0.0.1:3001/login",
+      data: {
+        email: value.email,
+        password: value.password,
+      },
+    })
+      .then((data) => {
+        // console.warn(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.warn("error bos");
+        console.log(err);
+      });
+    // navigation.navigate("Home");
+  };
+  return (
     <View style={{ position: "relative" }}>
-      <Image
-        style={{ position: "absolute" }}
-        source={require("../assets/papantulis.jpg")}
-      />
+      <Image style={{ position: "absolute" }} source={require("../assets/papantulis.jpg")} />
       <View style={styles.container}>
         <View style={{ alignItems: "center" }}>
           <Text style={styles.titletext}>Login</Text>
-          <TextInput placeholder="username" style={styles.userinput} />
-          <TextInput placeholder="password" style={styles.userinput} />
+          <TextInput placeholder="email" style={styles.userinput} value={value.email} onChangeText={(text) => setValue({ ...value, email: text })} />
+          <TextInput
+            placeholder="password"
+            style={styles.userinput}
+            value={value.password}
+            onChangeText={(text) => setValue({ ...value, password: text })}
+          />
           <View style={{ marginTop: 20 }}>
             <TouchableOpacity onPress={() => handleHome()} style={styles.buttonBorder}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={()=> handleDaftar()} >
+          <TouchableOpacity onPress={() => handleDaftar()}>
             <View style={{ marginVertical: 30, textAlign: "center" }}>
               <Text style={{ fontSize: 15 }}>Belum punya Akun? Daftar</Text>
             </View>
