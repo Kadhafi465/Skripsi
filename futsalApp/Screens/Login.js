@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Image, View, TextInput, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Image, View, TextInput, Text, TouchableOpacity, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
@@ -25,20 +25,20 @@ export default function Login({ navigation }) {
     // console.warn(value.email, value.password);
     axios({
       method: "post",
-      // url: "http://localhost:3001/login",
-      url: "http://127.0.0.1:3001/login",
+      url: "https://morning-journey-70592.herokuapp.com/login",
       data: {
         email: value.email,
         password: value.password,
       },
     })
-      .then((data) => {
-        // console.warn(data);
+      .then(({ data }) => {
         console.log(data);
+        // Alert.alert("sukses");
+        navigation.navigate("Home");
       })
       .catch((err) => {
-        console.warn("error bos");
-        console.log(err);
+        console.log("wrong email or password");
+        Alert.alert("wrong email or password");
       });
     // navigation.navigate("Home");
   };
