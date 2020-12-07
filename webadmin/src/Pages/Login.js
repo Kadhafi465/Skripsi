@@ -23,11 +23,7 @@ export default () => {
       username,
       password,
     };
-    dispatch(setLogin(data));
-    let isToken = localStorage.getItem("token");
-    if (isToken) {
-      history.push("/");
-    }
+    dispatch(setLogin(data, history));
   }
   return (
     <div className="gambarbg">
@@ -36,18 +32,8 @@ export default () => {
         <h3 className="logintitle">Login</h3>
         <div>
           <Form inline onSubmit={handleSubmit}>
-            <FormControl
-              className="logininput"
-              onChange={onChangeUsername}
-              type="text"
-              placeholder="username"
-            />
-            <FormControl
-              className="logininput"
-              onChange={onChangePassword}
-              type="password"
-              placeholder="password"
-            />
+            <FormControl className="logininput" onChange={onChangeUsername} type="text" placeholder="username" />
+            <FormControl className="logininput" onChange={onChangePassword} type="password" placeholder="password" />
             <Button variant="primary" size="sm" type="submit" block className="loginbtn">
               Login
             </Button>

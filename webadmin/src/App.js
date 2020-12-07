@@ -33,10 +33,8 @@ function App() {
           </Switch>
         ) : (
           <>
-            <Redirect to="/login?redirect=true" />
-            {/* <Route exact path="/login"> */}
-              <Login />
-            {/* </Route> */}
+            <Redirect to="/login" />
+            <Login />
           </>
         )}
       </Router>
